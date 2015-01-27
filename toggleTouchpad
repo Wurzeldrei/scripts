@@ -1,0 +1,10 @@
+#!/bin/bash
+if synclient | grep TouchpadOff.*0 > /dev/null; then
+	synclient TouchpadOff=1
+	echo Off
+	notify-send --icon=input-touchpad -t 2000 "Touchpad" Aus
+else
+	synclient TouchpadOff=0
+	echo On
+	notify-send --icon=input-touchpad -t 2000 "Touchpad" An
+fi
